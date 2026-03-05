@@ -16,7 +16,7 @@ export default function Enquiry() {
   })
 
   const getAllEnquiry = () => {
-    fetch(`${import.meta.env.VITE_API_URL}/api/enquiry/list')
+    axios.get(`${import.meta.env.VITE_API_URL}/api/enquiry/list')
       .then(res => {
         if (res.data && res.data.status === 200) {
           setEnquiryList(res.data.data);
@@ -40,7 +40,7 @@ export default function Enquiry() {
     // }
 
     if (formData._id) {
-      fetch(`${import.meta.env.VITE_API_URL}/api/enquiry/update/${formData._id}`, formData)
+      axios.put(`${import.meta.env.VITE_API_URL}/api/enquiry/update/${formData._id}`, formData)
         .then(() => {
           toast.success('Enquiry Updated successfully');
           setFormData({
@@ -57,7 +57,7 @@ export default function Enquiry() {
           toast.error('Failed to update enquiry');
         })
     }else{
-      fetch(`${import.meta.env.VITE_API_URL}/api/enquiry/insert', formData)
+       axios.post(`${import.meta.env.VITE_API_URL}/api/enquiry/insert', formData)
       .then((res) => {
         console.log(res.data);
         toast.success('Enquiry Added successfully');
