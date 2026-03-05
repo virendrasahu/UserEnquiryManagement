@@ -13,7 +13,7 @@ export function EnquiryList({data, getAllEnquiry, Swal, setFormData}) {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`${import.meta.env.VITE_API_URL}/api/enquiry/delete/${delid}`)
+        axios.delete(`https://userenquirymanagement.onrender.com/api/enquiry/delete/${delid}`)
         .then(res=>{
           console.log(res.data);
           toast.success('Enquiry deleted successfully');
@@ -42,7 +42,7 @@ export function EnquiryList({data, getAllEnquiry, Swal, setFormData}) {
   }
 
   let editRow=(id)=>{
-    axios.get(`${import.meta.env.VITE_API_URL}/api/enquiry/single/${id}`)
+    axios.get(`https://userenquirymanagement.onrender.com/api/enquiry/single/${id}`)
     .then(res=>{
       setFormData(res.data.data);
     })
