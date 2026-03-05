@@ -9,7 +9,7 @@ require('dotenv').config();
 //   origin: "*"
 // }));
 app.use(cors({
-  origin: "https://user-enquiry-management.vercel.app/"
+  origin: "https://user-enquiry-management.vercel.app"
 }));
 
 
