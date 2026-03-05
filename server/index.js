@@ -4,7 +4,10 @@ let app = express();
 let cors = require('cors');
 require('dotenv').config();
 
-app.use(cors())
+// app.use(cors())
+app.use(cors({
+  origin: "*"
+}));
 // Connect to MongoDB
 app.use(express.json());
 let enquiryRoutes = require('./App/routes/web/enquiryRoutes');
