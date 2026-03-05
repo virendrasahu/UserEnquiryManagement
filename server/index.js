@@ -14,9 +14,8 @@ app.use("/api/enquiry", enquiryRoutes); //http://localhost:8000/api/enquiry/inse
 
 mongoose.connect(process.env.DBURL).then(() => {
     console.log("Connected to MongoDB");
-    app.listen(process.env.PORT || 3000, () => {
-        console.log(`Server is running on port ${process.env.PORT || 3000}`);
+    app.listen(process.env.PORT || 5000, () => {
+        console.log(`Server is running on port ${process.env.PORT || 5000}`);
     });
-})
-
+});
 
