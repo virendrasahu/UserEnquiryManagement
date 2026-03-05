@@ -16,7 +16,7 @@ export default function Enquiry() {
   })
 
   const getAllEnquiry = () => {
-    axios.get('http://localhost:8020/api/enquiry/list')
+    axios.get('http://userenquirymanagement.onrender.com/api/enquiry/list')
       .then(res => {
         if (res.data && res.data.status === 200) {
           setEnquiryList(res.data.data);
@@ -40,7 +40,7 @@ export default function Enquiry() {
     // }
 
     if (formData._id) {
-      axios.put(`http://localhost:8020/api/enquiry/update/${formData._id}`, formData)
+      axios.put(`http://userenquirymanagement.onrender.com/api/enquiry/update/${formData._id}`, formData)
         .then(() => {
           toast.success('Enquiry Updated successfully');
           setFormData({
@@ -57,7 +57,7 @@ export default function Enquiry() {
           toast.error('Failed to update enquiry');
         })
     }else{
-      axios.post('http://localhost:8020/api/enquiry/insert', formData)
+      axios.post('http://userenquirymanagement.onrender.com/api/enquiry/insert', formData)
       .then((res) => {
         console.log(res.data);
         toast.success('Enquiry Added successfully');
