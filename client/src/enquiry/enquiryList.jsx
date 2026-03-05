@@ -13,7 +13,7 @@ export function EnquiryList({data, getAllEnquiry, Swal, setFormData}) {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:8020/api/enquiry/delete/${delid}`)
+        axios.delete(`http://userenquirymanagement.onrender.com/api/enquiry/delete/${delid}`)
         .then(res=>{
           console.log(res.data);
           toast.success('Enquiry deleted successfully');
@@ -42,7 +42,7 @@ export function EnquiryList({data, getAllEnquiry, Swal, setFormData}) {
   }
 
   let editRow=(id)=>{
-    axios.get(`http://localhost:8020/api/enquiry/single/${id}`)
+    axios.get(`http://userenquirymanagement.onrender.com/api/enquiry/single/${id}`)
     .then(res=>{
       setFormData(res.data.data);
     })
